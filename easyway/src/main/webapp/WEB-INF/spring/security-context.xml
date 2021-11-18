@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="customAccessDenied" class="org.zerock.security.CustomAccessDeniedHandler"></bean>
+	<bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean>
+	<!-- <bean id="customPasswordEncoder" -->
+	<!-- class="org.zerock.security.CustomNoOpPasswordEncoder"></bean> -->
+	<bean id="bcryptPasswordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<bean id="customUserDetailsService"
+		class="org.zerock.security.CustomUserDetailsService"></bean>
+
+	<security:http>
+
+		<security:intercept-url pattern="/sample/all"
+			access="permitAll" />
+
+		<security:intercept-url pattern="/sample/member"
+			access="hasRole('ROLE_MEMBER')" />
+
+		<security:intercept-url pattern="/sample/admin"
+			access="hasRole('ROLE_ADMIN')" />
+
+		<security:form-login login-page="/customLogin"
+			authentication-success-handler-ref="customLoginSuccess" />
+		<!-- 상기 role에 맞지 않는 접근은 로그인 폼으로 튕긴다 -->
+
+		<security:logout logout-url="/customLogout"
+			invalidate-session="true" />
+		<!-- post일 경우 -->
+		<!-- 로그아웃하면 세션을 만료하겠다 -->
+
+		<!-- <security:csrf disabled="true"/> -->
+
+		<!-- <security:access-denied-handler error-page="/accessError"/> -->
+		<!-- 접근이 거부되면 이동할 페이지 -->
+
+		<security:access-denied-handler ref="customAccessDenied" />
+
+	</security:http>
+	<security:authentication-manager>
+		<security:authentication-provider
+			user-service-ref="customUserDetailsService">
+		
+		
+<!-- 			<security:jdbc-user-service
+				data-source-ref="dataSource"
+				users-by-username-query="select userid , userpw 
+		, enabled from tbl_member where userid = ? "
+				authorities-by-username-query="select 
+		userid, auth from tbl_member_auth where userid = ? " /> -->
+			<security:password-encoder ref="bcryptPasswordEncoder" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<!-- <security:authentication-manager> -->
+	<!-- <security:authentication-provider> -->
+	<!-- <security:jdbc-user-service -->
+	<!-- data-source-ref="dataSource" /> -->
+
+	<!-- <security:password-encoder ref="bcryptPasswordEncoder" /> -->
+
+	<!-- <security:password-encoder ref="customPasswordEncoder" /> -->
+	<!-- <security:user-service> -->
+	<!-- <security:user name="member" password="{noop}member" -->
+	<!-- authorities="ROLE_MEMBER" /> -->
+	<!-- {noop}은 왜 쓴거지. 인코딩 뭐라 했나 -->
+
+	<!-- 우선 name과 password를 임의로 붙였지만, 나중에는 db에서 가져와서 쓸 것 -->
+
+	<!-- <security:user name="admin" password="{noop}admin" -->
+	<!-- authorities="ROLE_MEMBER, ROLE_ADMIN" /> -->
+	<!-- admin은 member 권한도 가지고, admin 권한도 가진다 -->
+	<!-- </security:user-service> -->
+
+	<!-- </security:authentication-provider> -->
+	<!-- </security:authentication-manager> -->
+
+</beans>
