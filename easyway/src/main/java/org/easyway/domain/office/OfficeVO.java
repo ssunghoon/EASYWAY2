@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OfficeVO {
 	
-	private int office_id;
+	private Long office_id;
 	private String office_name;
 	private String office_code;
 }

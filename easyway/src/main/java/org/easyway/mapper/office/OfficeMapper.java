@@ -7,9 +7,9 @@ import org.easyway.domain.office.OfficeVO;
 
 public interface OfficeMapper {
 	
-	public int insertOffice(OfficeVO office);
+	public int add(String officeName);
 	public int insertOfficeCreate(OfficeCreate oc);
-	public List<OfficeVO> listOffice(int member_id);
+	public List<OfficeVO> list(Long member_id);
 	public OfficeVO detailOffice(int seq);
 	public int deleteOffice(int seq);	
 

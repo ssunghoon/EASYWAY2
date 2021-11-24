@@ -38,30 +38,32 @@
 </head>
 <body class="text-center">
 
-	<main class="form-signin">
-	
-	<form action="memberLoginAction.do" method="post" accept-charset="utf-8">
+	<main class="form-signin"> <img
+		src="/resources/image/s_symbol.png" style="margin-bottom: 30px" />
+	<form action="/login" method="post" accept-charset="utf-8">
 		<h1 class="h3 mb-3 fw-normal">Easyway Log-in</h1>
 
 		<div class="form-floating">
 			<input type="email" class="form-control" id="floatingInput"
-				name="member_email" placeholder="name@example.com">
-			<label	for="floatingInput">Email address</label>
+				name="username" placeholder="name@example.com"> <label
+				for="floatingInput">Email address</label>
 		</div>
 		<div class="form-floating">
 			<input type="password" class="form-control" id="floatingPassword"
-				name="member_pw" placeholder="Password">
-			<label	for="floatingPassword">Password</label>
+				name="password" placeholder="Password"> <label
+				for="floatingPassword">Password</label>
 		</div>
-		<button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+		<button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+		</div>
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
 	</form>
 
 	<div id="register">
-		<span>아직 회원이 아니신가요? </span>
-		<a href="/member/join">회원가입</a>
+		<span>아직 회원이 아니신가요? </span> <a href="/member/join">회원가입</a>
 	</div>
-	
+
 	</main>
-	
+
 </body>
 </html>

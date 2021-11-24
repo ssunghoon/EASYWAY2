@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Position{
 	
-	private int position_id;
+	private Long position_id;
 	private String position_name;
 	private int office_id;
 }

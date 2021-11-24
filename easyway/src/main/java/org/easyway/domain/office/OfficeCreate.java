@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OfficeCreate {
 	
-	private int oc_id;
+	private Long oc_id;
 	private int member_id;
 	private int office_id;
 	
