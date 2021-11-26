@@ -25,3 +25,9 @@
 	.sign {
 	padding-top:50px;
 }
+	#sign_check {
+		color: #B2CCFF;
+	}
+	#content-box {
+		height: 400px;
+	}

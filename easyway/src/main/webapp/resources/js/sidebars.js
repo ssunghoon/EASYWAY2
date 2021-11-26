@@ -6,3 +6,6 @@
     new bootstrap.Tooltip(tooltipTriggerEl)
   })
 })()
+
+// summernote 추가
+
