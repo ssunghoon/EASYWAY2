@@ -6,34 +6,34 @@
 
 <mapper namespace="org.easyway.mapper.member.MemberMapper">
 
+	<resultMap id="memberVOResultMap" type="org.easyway.domain.member.MemberVO">
+		<id property="memberId" column="member_id" />
+		<result property="memberEmail" column="member_email" />
+		<result property="memberPassword" column="member_pw" />
+		<result property="memberName" column="member_name" />
+		<result property="memberAuth" column="member_auth" />
+	</resultMap>
+
 	<!-- 이사& 수정하면서 : 아직 안쓰는 부분은 주석처리해가며 수정해야 에러 안 남 -->
-	<insert id="join">
+	<insert id="insertMember">
 		insert into member(
-			member_id, member_email, member_pw, member_name, member_auth
+		member_id, member_email,
+		member_pw, member_name, member_auth
 		)
 		values(
-			member_seq.nextval, #{member_email}, #{member_pw}, #{member_name}, #{member_auth}
+		member_seq.nextval,
+		#{memberMail}, #{memberPassword}, #{memberName},
+		#{memberAuth}
 		)
 	</insert>
-	<select id="login" resultType="org.easyway.domain.member.MemberVO">
-		select * from member where member_email = #{member_id}
+	<select id="login" resultMap="memberVOResultMap">
+		select * from member where
+		member_email = #{memberId}
 	</select>
-	
-	<select id="detailOffice" parameterType="int" resultType="org.easyway.domain.office.OfficeVO">
-		select * from office where office_id = #{office_id}
+
+	<select id="readEmail" resultType="long">
+		select member_id from member where member_email = #{tempEmail}
 	</select>
-	
-<!-- 	<update id="updateBoard" parameterType="BoardVO"> -->
-<!-- 		update board set -->
-<!-- 			title = #{title}, -->
-<!-- 			contents = #{contents} -->
-<!-- 		where seq = #{seq} -->
-<!-- 	</update> -->
-	
-<!-- 	<delete id="deleteOffice" parameterType="int"> -->
-<!-- 		delete from office -->
-<!-- 		where office_id = #{office_id} -->
-<!-- 	</delete> -->
 </mapper>
 
 

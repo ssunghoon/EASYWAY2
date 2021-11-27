@@ -24,18 +24,18 @@ public class CustomUser implements UserDetails {
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
 		Collection<GrantedAuthority> collect = new ArrayList<>();
-		collect.add(() -> member.getMember_auth());
+		collect.add(() -> member.getMemberAuth());
 		return collect;
 	}
 
 	@Override
 	public String getPassword() {
-		return member.getMember_pw();
+		return member.getMemberPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		return member.getMember_email();
+		return member.getMemberEmail();
 	}
 
 	@Override

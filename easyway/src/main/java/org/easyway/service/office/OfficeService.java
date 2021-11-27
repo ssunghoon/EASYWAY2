@@ -6,6 +6,6 @@ import org.easyway.domain.member.MemberVO;
 import org.easyway.domain.office.OfficeVO;
 
 public interface OfficeService {
-	public List<OfficeVO> list(Long member_id);
-	public int add(String officeName);
+	public List<OfficeVO> getList(Long memberId);
+	public int create(String officeName, Long memberId);
 }

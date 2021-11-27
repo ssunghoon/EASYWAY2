@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OfficeCreate {
 	
-	private Long oc_id;
-	private int member_id;
-	private int office_id;
+	private Long ocId;
+	private Long memberId;
+	private Long officeId;
 	
 }

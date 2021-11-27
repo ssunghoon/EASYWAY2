@@ -9,9 +9,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Position{
+public class PositionVO{
 	
-	private Long position_id;
-	private String position_name;
-	private int office_id;
+	private Long positionId;
+	private String positionName;
+	private Long officeId;
+	private int positionLevel;
 }

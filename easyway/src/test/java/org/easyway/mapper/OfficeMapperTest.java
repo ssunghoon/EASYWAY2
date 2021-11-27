@@ -23,13 +23,13 @@ public class OfficeMapperTest {
 	 //다시해야함 페스워드 인코더랑 이것저것 해줘야함.
 	@Test
 	public void test() {
-		int on = mapper.add("동혁이의 회사");
-	    
-		if(on > 0){
-			log.info("seucess");
-		}else{
-			log.info("fail");
-		}	   
+//		int on = mapper.add("동혁이의 회사");
+//	    
+//		if(on > 0){
+//			log.info("seucess");
+//		}else{
+//			log.info("fail");
+//		}	   
 	}
 
 }

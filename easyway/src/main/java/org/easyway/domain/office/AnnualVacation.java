@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AnnualVacation {
 	
-	private Long av_id;
-	private int av_annual;//몇년차인지
-	private int office_id;	
+	private Long annualVacationId;
+	private Long officeId;
+	private int annual;//몇년차인지
+	private int vacations;
 }

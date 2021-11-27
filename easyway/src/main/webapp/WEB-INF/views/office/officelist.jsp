@@ -5,6 +5,7 @@
 	prefix="sec"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -15,57 +16,111 @@
 <link rel="stylesheet" type="text/css" href="/resources/slick/slick.css" />
 <link rel="stylesheet" type="text/css"
 	href="/resources/slick/slick-theme.css" />
+<style>
+body {
+	background: #0397ed !important;
+	display: grid;
+	height: 100vh;
+}
+
+.item {
+	justify-self: center;
+	align-self: center;
+	width: 65rem;
+}
+
+.main-title {
+	display: flex;
+	margin-bottom: 60px;
+}
+
+.main-title>h1 {
+	flex: 9 1 0;
+}
+
+.main-title>button {
+	flex: 1 1 0;
+	align-items: flex-end;
+	margin-right: -20px;
+	letter-spacing: 1.8px;
+}
+
+.card {
+	margin-right: 10px;
+	height: 149px;
+}
+
+.btn {
+	background: #0397ed;
+	color: white;
+}
+
+.card-title {
+	font-weight: 600;
+	color: #444;
+}
+
+.card-text {
+	color: #666;
+}
+
+.card-body a {
+	float: right;
+}
+</style>
 
 </head>
+
 <body>
-	<header style="float: right">
-		<form action="/member/logout" method="post" accept-charset="utf-8">
-			<button class="w-100 btn btn-lg btn-primary" type="submit">Logout</button>
-			<input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
-		</form>
-	</header>
 	<c:if test="${insertResult != null }">
 		<c:choose>
 			<c:when test="${insertResult > 0}">
 				<script type="text/javascript">
-					alert("오피스 등록 성공!");
-				</script>
+								alert("오피스 등록 성공!");
+							</script>
 			</c:when>
 			<c:otherwise>
 				<script type="text/javascript">
-					alert("오피스 등록 실패!");
-				</script>
+								alert("오피스 등록 실패!");
+							</script>
 			</c:otherwise>
 		</c:choose>
 	</c:if>
-	<div style="padding: 300px; h: 200px; background-color: #0D6EFD;">
-		<h1 style="color: white;">나의 오피스 리스트</h1>
+	<div class="item">
+		<div class="main-title">
+			<h1 style="color: white;">
+				<i class="far fa-building"></i> 오 피 스 리 스 트
+			</h1>
+			<form action="/member/logout" method="post" accept-charset="utf-8">
+				<button type="submit" class="btn" >로그아웃</button>
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+			</form>
+		</div>
 		<div class="responsive">
-			<c:forEach var="officeCard" items="${listOffice}">
-				<div class="card" style="width: 200px; margin: 10px">
+			<c:forEach var="officeCard" items="${ofiiceList}">
+				<div class="card">
 					<div class="card-body">
-						<h4 class="card-title">${officeCard.office_name}</h4>
-						<p class="card-text">${officeCard.office_name}입니다.</p>
-						<a href="/easyway/main/mainAction.do" class="btn btn-primary">입장하기</a>
+						<h4 class="card-title">${officeCard.officeName}</h4>
+						<p class="card-text">${officeCard.officeName}입니다.</p>
+						<a href="/easyway/main/mainAction.do" class="btn">입장하기</a>
 					</div>
 				</div>
 			</c:forEach>
-
 		</div>
 		<sec:authentication property="principal" var="principal" />
 		<sec:authorize access="isAuthenticated()">
 			<c:set var="auth" value="ROLE_ADMIN" />
 			<c:choose>
-				<c:when test="${principal.member.member_auth == auth}">
-					<button type="button" class="btn btn-primary"
-						data-bs-toggle="modal" data-bs-target="#officeCreateModal">
+				<c:when test="${principal.member.memberAuth == auth}">
+					<button type="button" class="btn" data-bs-toggle="modal"
+						data-bs-target="#officeCreateModal">
 						오피스 생성 <i class="fas fa-plus-circle"></i>
 					</button>
 				</c:when>
 				<c:otherwise>
-					<button type="button" class="btn btn-primary"
-						data-bs-toggle="modal" data-bs-target="#officeCreateModal">
+					<button type="button" class="btn" data-bs-toggle="modal"
+						data-bs-target="#officeCreateModal">
 						오피스 입장 <i class="fas fa-plus-circle"></i>
 					</button>
 				</c:otherwise>
@@ -83,7 +138,7 @@
 						aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<form action="/office/add" method="post">
+					<form action="/office/create" method="post">
 						<div class="mb-3">
 							<label for="recipient-name" class="col-form-label">새로 생성할
 								오피스 이름:</label> <input type="text" class="form-control"
@@ -94,7 +149,7 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-bs-dismiss="modal">닫기</button>
-							<input type="submit" class="btn btn-primary" value="오피스 생성">
+							<input type="submit" class="btn" value="오피스 생성">
 							</button>
 						</div>
 					</form>
@@ -111,4 +166,5 @@
 <script type="text/javascript" src="/resources/slick/slick.min.js"></script>
 <script src="/resources/js/office/office_carousel.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
 </html>

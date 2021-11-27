@@ -1,6 +1,6 @@
 package org.easyway.domain.office;
 
-import java.io.Serializable;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OfficeVO {
+public class OfficeVO{
 	
-	private Long office_id;
-	private String office_name;
-	private String office_code;
+	private Long officeId;
+	private String officeName;
+	private String officeCode;
 }

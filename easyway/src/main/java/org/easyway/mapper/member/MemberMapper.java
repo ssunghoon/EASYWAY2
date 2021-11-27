@@ -9,9 +9,10 @@ import org.easyway.domain.office.OfficeVO;
 
 public interface MemberMapper {
 	
-	public int join(MemberVO member);
-	public List<OfficeVO> listOffice();
-	public MemberVO login(String member_eamil);
+	public Long readEmail(String tempEmail);	
+	public int insert(MemberVO member);
+	//public List<OfficeVO> getList();
+	public MemberVO login(String memberEmail);
 //	Office detailOffice(int seq);
 //	int deleteOffice(int seq);	
 

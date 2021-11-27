@@ -2,15 +2,22 @@ package org.easyway.mapper.office;
 
 import java.util.List;
 
+import org.easyway.domain.office.AnnualVacation;
 import org.easyway.domain.office.OfficeCreate;
 import org.easyway.domain.office.OfficeVO;
+import org.easyway.domain.office.PositionVO;
 
 public interface OfficeMapper {
 	
-	public int add(String officeName);
-	public int insertOfficeCreate(OfficeCreate oc);
-	public List<OfficeVO> list(Long member_id);
-	public OfficeVO detailOffice(int seq);
-	public int deleteOffice(int seq);	
-
+	//insert
+	public Long insertOffice(OfficeVO office);
+	public int insertOfficeCreate(OfficeCreate officeCreate);
+	public int insertPosition(PositionVO position);
+	public int insertAnnualVacation(AnnualVacation annualVacation);
+	
+	
+	//select	
+	public List<OfficeVO> getList(Long memberId);
+	public OfficeVO detail(Long officeId);
+	public int delete(Long officeId);
 }

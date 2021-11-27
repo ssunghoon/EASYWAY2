@@ -20,13 +20,19 @@ public class MemberServiceImpl implements MemberService {
 	private PasswordEncoder pwencoder;
 	
 	@Override
-	public int join(MemberVO member) {
+	public int register(MemberVO member) {
 		log.info("join..........service" + member);
-		if(member.getMember_auth() == null){
-			member.setMember_auth("ROLE_MEMBER");
+		if(member.getMemberAuth() == null){
+			member.setMemberAuth("ROLE_MEMBER");
 		}
-		String originPw = member.getMember_pw();
-		member.setMember_pw(pwencoder.encode(originPw));
-		return mapper.join(member);
+		String originPw = member.getMemberPassword();
+		member.setMemberPassword(pwencoder.encode(originPw));
+		return mapper.insert(member);
+	}
+	
+	@Override
+	public Long checkEmail(String tempEmail) {
+		
+		return mapper.readEmail(tempEmail);
 	}
 }

@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberVO {
-	private Long member_id;
-	private String member_email;
-	private String member_pw;
-	private String member_name;
-	private String member_auth;
+	private Long memberId;
+	private String memberEmail;
+	private String memberPassword;
+	private String memberName;
+	private String memberAuth;
 }

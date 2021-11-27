@@ -37,7 +37,7 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 
 		if (roleNames.contains("ROLE_ADMIN") || roleNames.contains("ROLE_MEMBER")) {
 
-			response.sendRedirect("/office/list");
+			response.sendRedirect("/office/officelist");
 			return;
 //			admin으로 로그인하면 바로 /sample/admin 페이지로 이동하게 처리한 것
 		}
