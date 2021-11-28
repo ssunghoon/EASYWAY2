@@ -17,14 +17,18 @@
 	href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
 
 <!-- Bootstrap core CSS -->
-<link href="${path}/css/reset.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="/resources/css/reset.css" rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
 <!--fullcalendar CDN  -->
- 	 <link href="${path}/css/calendarMain.css" rel="stylesheet">
-	<script src="${path}/js/calendarMain.js"></script>
-	
-	
-	<script>
+<link href="/resources/css/calendarMain.css" rel="stylesheet">
+<script src="/resources/js/calendarMain.js"></script>
+
+
+<script>
 
 	  document.addEventListener('DOMContentLoaded', function() {
 	    var calendarEl = document.getElementById('calendar');
@@ -167,141 +171,153 @@
 	}
 }
 
-  body {
-   	margin-top: 40px;
-    margin: 0px;
-    padding: 0;
-   /*  font-family: Arial, Helvetica Neue, Helvetica, sans-serif; */
-    position: relative;
-  }
+body {
+	margin-top: 40px;
+	margin: 0px;
+	padding: 0;
+	/*  font-family: Arial, Helvetica Neue, Helvetica, sans-serif; */
+	position: relative;
+}
 
-  #calendar {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  #title {/*캘린더제목수정하기*/
-  	margin: 0px 0px 50px 0px;
-  	font-size: 40px;
-  	text-align: center;
-  	color : #0D6EFD;
-  	border-bottom: 1px solid #ccc;
-  	padding-bottom: 20px;
-  	padding-top: 20px;
-  }
-    p{
-        text-align: center;
-        color: black;
-    }
-    #modalwrapper{
-    position: absolute;
-    top: 100px;
-    right: 50px;
-    font-size: 14px;
-    }
-  /*-----*/
-  #external-events {
-    position: fixed;
-    left: 20px;
-    top: 20px;
-    width: 150px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    background: #eee;
-    text-align: left;
-  }
+#calendar {
+	max-width: 1100px;
+	margin: 0 auto;
+}
 
-  #external-events h4 {
-    font-size: 16px;
-    margin-top: 0;
-    padding-top: 1em;
-  }
+#title { /*캘린더제목수정하기*/
+	margin: 0px 0px 50px 0px;
+	font-size: 40px;
+	text-align: center;
+	color: #0D6EFD;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
 
-  #external-events .fc-event {
-    margin: 3px 0;
-    cursor: move;
-  }
+p {
+	text-align: center;
+	color: black;
+}
 
-  #external-events p {
-    margin: 1.5em 0;
-    font-size: 11px;
-    color: #666;
-  }
+#modalwrapper {
+	position: absolute;
+	top: 100px;
+	right: 50px;
+	font-size: 14px;
+}
+/*-----*/
+#external-events {
+	position: fixed;
+	left: 20px;
+	top: 20px;
+	width: 150px;
+	padding: 0 10px;
+	border: 1px solid #ccc;
+	background: #eee;
+	text-align: left;
+}
 
-  #external-events p input {
-    margin: 0;
-    vertical-align: middle;
-  }
+#external-events h4 {
+	font-size: 16px;
+	margin-top: 0;
+	padding-top: 1em;
+}
 
-  #calendar-wrap {
-    margin-left: 300px;
-    font-size: 14px;
-  }
+#external-events .fc-event {
+	margin: 3px 0;
+	cursor: move;
+}
 
-  #calendar {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .container{
-  margin-top: 50px;
-  margint-bottom: 100px;
-  }
-  
+#external-events p {
+	margin: 1.5em 0;
+	font-size: 11px;
+	color: #666;
+}
+
+#external-events p input {
+	margin: 0;
+	vertical-align: middle;
+}
+
+#calendar-wrap {
+	margin-left: 300px;
+	font-size: 14px;
+}
+
+#calendar {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.container {
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
 </style>
 <!-- Custom styles for this template -->
-<link href="${path}/css/sidebars.css" rel="stylesheet">
+<link href="/resources/css/sidebars.css" rel="stylesheet">
 </head>
 <body>
 	<jsp:include page="../public/sidebar.jsp" />
-	
-	<p id = "title"><캘린더></p>
-	
+
+	<p id="title">
+		캘린더
+	</p>
+
 	<!--일정추가버튼  -->
 	<div id="modalwrapper">
-	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-		data-bs-target="#exampleModal">일정추가</button>
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">일정 추가</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-				
-					<form action="scheduleInsertAction.do" method="post"><!--   accept-charset="utf-8"-->
-						<div class="mb-3">
-							<label>제목:</label> <input type="text" class="form-control" name="schedule_title">
-							<label>시작시간</label> <input type="date" class="form-control" name="schedule_start">
-							<label>종료시간</label> <input type="date" class="form-control" name="schedule_end">
-							<label>내용</label> <input type="text" class="form-control" name="schedule_content">
-							<label>중요도 </label>
-							<input type="radio" name="schedule_importance" id="first" value="상">&nbsp;<label for="first">상</label>
-				 			<input type="radio" name="schedule_importance" id="second" value="중">&nbsp;<label for="second">중</label>
-				 			<input type="radio" name="schedule_importance" id="third" value="하">&nbsp;<label for="third">하</label> 
-							<br>
-							<label>공사구분</label> <input type="text" class="form-control" name="schedule_private">
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-bs-dismiss="modal">닫기</button>
-							<input type="submit" class="btn btn-primary" value="일정 생성">
-						</div>
-					</form>
-					
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+			data-bs-target="#exampleModal">일정추가</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">일정 추가</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+
+						<!-- 					<form action="scheduleInsertAction.do" method="post">  accept-charset="utf-8" -->
+						
+						<!--UI마스터-->
+						<form action="/schedule/register" method="post" >
+                     <!--   accept-charset="utf-8"-->
+	                     <div class="mb-3">
+	                        <label>제목:</label>
+	                            <input type="text" class="form-control" name="schedule_title">
+	                        <label>시작시간</label>
+	                            <input type="date" class="form-control" name="schedule_start">
+	                        <label>종료시간</label>
+	                            <input type="date" class="form-control" name="schedule_end">
+	                        <label>내용</label>
+	                            <input type="text" class="form-control" name="schedule_content">
+	                        <label>중요도 </label>
+	                            <input type="radio" name="schedule_importance" id="first" value="상">&nbsp;<label for="first">상</label>
+	                            <input type="radio" name="schedule_importance" id="second" value="중">&nbsp;<label for="second">중</label>
+	                            <input type="radio" name="schedule_importance" id="third" value="하">&nbsp;<label for="third">하</label>
+	                            <br>
+	                        <label>공사구분</label>
+	                            <input type="text" class="form-control" name="schedule_private">
+	                     </div>
+	                     <div class="modal-footer">
+	                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+	                        <input type="submit" class="btn btn-primary" value="일정 생성">
+	                     </div>
+                 		 </form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-	
-	
+
+
 	<!-- <div id='wrap'> -->
 
-    <!-- <div id='external-events'>
+	<!-- <div id='external-events'>
       <h4>Draggable Events</h4>
 
       <div id='external-events-list'>
@@ -327,37 +343,41 @@
         <label for='drop-remove'>체크후 드래그해서 달력에 추가하면 사라집니다</label>
       </p>
     </div> -->
-    
+
 	<!--달력 폼-->
-    <div id='calendar-wrap'>
-	<div id='calendar'></div>
-	
-	
-	<!-- 리스트 -->
-	<div class="container">
-		<div class="row">
-		<h3 style="text-align: center; color: #0D6EFD"><일정리스트></h3>
-			<table style= "text-align: center;border: 1px solid #dddddd;" ><!--style="-->
-				<tr>
-					<th style="background-color: #eeeeee; text-align: center;">일정번호
+	<div id='calendar-wrap'>
+		<div id='calendar'></div>
+
+
+		<!-- 리스트 -->
+		<div class="container">
+			<div class="row">
+				<h3 style="text-align: center; color: #0D6EFD">
+					&lt;일정리스트&gt;
+				</h3>
+				<table style="text-align: center; border: 1px solid #dddddd;">
+					<!--style="-->
+					<tr>
+						<th style="background-color: #eeeeee; text-align: center;">일정번호
+						</th>
 						<th style="background-color: #eeeeee; text-align: center;">사원번호
 						</th>
-					<th style="background-color: #eeeeee; text-align: center;">제목
+						<th style="background-color: #eeeeee; text-align: center;">제목
 						</th>
-					<th style="background-color: #eeeeee; text-align: center;">시작시간
+						<th style="background-color: #eeeeee; text-align: center;">시작시간
 						</th>
-					<th style="background-color: #eeeeee; text-align: center;">마감시간
+						<th style="background-color: #eeeeee; text-align: center;">마감시간
 						</th>
-					<th style="background-color: #eeeeee; text-align: center;">내용
+						<th style="background-color: #eeeeee; text-align: center;">내용
 						</th>
-					<th style="background-color: #eeeeee; text-align: center;">중요도
+						<th style="background-color: #eeeeee; text-align: center;">중요도
 						</th>
-					<th style="background-color: #eeeeee; text-align: center;">공사구분
-				 	</th>	 
-				</tr>
-	
-	<c:forEach var="schedule" items="${list}">
-					<tr  style="background-color: #11111; text-align: center; border: 1px;">
+						<th style="background-color: #eeeeee; text-align: center;">공사구분
+						</th>
+					</tr>
+
+					<c:forEach var="schedule" items="${list}">
+						<tr style="background-color: #11111; text-align: center; border: 1px;">
 							<td>${schedule.schedule_id }</td>
 							<td>${schedule.employee_id }</td>
 							<td>${schedule.schedule_title  }</td>
@@ -366,19 +386,19 @@
 							<td>${schedule.schedule_content }</td>
 							<td>${schedule.schedule_importance }</td>
 							<td>${schedule.schedule_private }</td>
-					</tr>
-	</c:forEach>
-	</table>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
 	</div>
-	</div>
-	</div>
-	
+
 	<!--일정추가 모달창-->
-	<div id="modalwrapper">
-		<!-- Button trigger modal -->
+	<!-- <div id="modalwrapper">
+		Button trigger modal
 		<button type="button" class="btn btn-primary" data-bs-toggle="modal"
 			data-bs-target="#exampleModal">일정추가</button>
-		<!-- Modal -->
+		Modal
 		<div class="modal fade" id="exampleModal" tabindex="-1"
 			aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -391,7 +411,7 @@
 					<div class="modal-body">
 
 						<form action="scheduleInsertAction.do" method="post">
-							<!--   accept-charset="utf-8"-->
+							  accept-charset="utf-8"
 							<div class="mb-3">
 								<label>제목:</label> <input type="text" class="form-control"
 									name="schedule_title"> <label>시작시간</label> <input
@@ -419,12 +439,16 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	
+	</div> -->
+
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="${path}/js/menu.js"></script>
-<script src="${path}/js/sidebars.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/resources/js/menu.js"></script>
+<script src="/resources/js/sidebars.js"></script>
 </html>
