@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.easyway.domain.sign.BasicSignVO;
 import org.easyway.domain.sign.Criteria;
+import org.easyway.domain.sign.EmployeeVO;
 import org.easyway.domain.sign.SignVO;
 import org.easyway.domain.sign.SpendSignVO;
 import org.easyway.domain.sign.VacationSignVO;
@@ -33,4 +34,11 @@ public interface SignMapper {
 	public SpendSignVO getDraftSpend(Long signId);
 	// 기안함 상세(휴가신청서)
 	public VacationSignVO getDraftVacation(Long signId);
+	
+
+	public int getTotalCount(Criteria cri);
+	
+	// 직원 목록
+	public List<EmployeeVO> getListEmployee();
+	
 }

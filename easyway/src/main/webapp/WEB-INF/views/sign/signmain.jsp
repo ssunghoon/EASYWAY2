@@ -58,6 +58,11 @@
 				onclick="location.href='/sign/draftlist'">기안함</button>
 			<button type="button" class="btn btn-primary">결재함</button>
 		</div>
+		<div id="middleBox">
+			<button class="btn btnGray" onclick="location.href='/sign/applybasic'" >기본기안서</button>
+			<button class="btn btnGray" onclick="location.href='/sign/applyspend'" >지출결의서</button>
+			<button class="btn btnGray" onclick="location.href='/sign/applyvacation'" >휴가신청서</button>
+		</div>
 	</div>
 </body>
 

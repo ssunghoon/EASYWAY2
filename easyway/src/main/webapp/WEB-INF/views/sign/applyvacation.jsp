@@ -58,8 +58,11 @@
 						<input type="radio" name="signVacationType" id="fourth" value="경조사"><label for="fourth">경조사</label><br>
 				휴가 시작일 : <input type="date" name="signVacationStart"><br>
 				휴가 종료일 : <input type="date" name="signVacationEnd"><br>
+				중요도 : <input type="radio" name="signVacationImportance" id="first" value="상">&nbsp;<label for="first">상</label>
+				 <input type="radio" name="signVacationImportance" id="second" value="중">&nbsp;<label for="second">중</label>
+				 <input type="radio" name="signVacationImportance" id="third" value="하">&nbsp;<label for="third">하</label><br>
 				사유 <br>
-				<textarea rows="6" cols="70" name="signContent"></textarea>
+				<textarea id="summernote" name="signContent"></textarea>
 				<br>
 				<!-- 기안 양식번호 --><input type="hidden" value="3" name="signFormId">
 				<input type="submit" value="등록">
@@ -72,4 +75,9 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="${path}/js/menu.js"></script>
 <script src="./js/sidebars.js"></script>
+<!-- summernote -->
+<script src="/resources/js/summernote.js"></script>
+<script src="/resources/summernote/summernote-lite.js"></script>
+<script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
+<link rel="stylesheet" href="/resources/summernote/summernote-lite.css">  
 </html>

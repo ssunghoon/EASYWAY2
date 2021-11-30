@@ -62,7 +62,7 @@
 				 <input type="radio" name="signSpendImportance" id="second" value="중">&nbsp;<label for="second">중</label>
 				 <input type="radio" name="signSpendImportance" id="third" value="하">&nbsp;<label for="third">하</label><br>
 				 <br>
-				<textarea rows="6" cols="70" name="signContent"></textarea>
+				<textarea id="summernote" name="signContent"></textarea>
 				<br>
 				<!-- 기안 양식번호 --><input type="hidden" value="2" name="signFormId">
 				<input type="submit" value="등록">
@@ -75,4 +75,9 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="${path}/js/menu.js"></script>
 <script src="./js/sidebars.js"></script>
+<!-- summernote -->
+<script src="/resources/js/summernote.js"></script>
+<script src="/resources/summernote/summernote-lite.js"></script>
+<script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
+<link rel="stylesheet" href="/resources/summernote/summernote-lite.css">  
 </html>

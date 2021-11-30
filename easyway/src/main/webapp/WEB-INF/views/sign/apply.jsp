@@ -47,9 +47,12 @@
 <jsp:include page="../public/sidebar.jsp" />
 
 	<div id="wrap">
-		<div class="btn-group btn-group-lg col-lg-11" style="margin:50px">
-		  <div class="btn btn-primary" style="hover:none">기안작성</div>
-
+		<div class="btn-group btn-group-lg col-lg-11" style="margin: 50px">
+			<button type="button" class="btn btn-primary"
+				onclick="location.href='/sign/apply'">기안작성</button>
+			<button type="button" class="btn btn-primary"
+				onclick="location.href='/sign/draftlist'">기안함</button>
+			<button type="button" class="btn btn-primary">결재함</button>
 		</div>
 		<div id="middleBox">
 			<button class="btn btnGray" onclick="location.href='/sign/applybasic'" >기본기안서</button>

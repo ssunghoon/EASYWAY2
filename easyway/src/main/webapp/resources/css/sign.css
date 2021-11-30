@@ -31,3 +31,9 @@
 	#content-box {
 		height: 400px;
 	}
+	.modal-content {
+		margin-top:100px;
+		width: 800px;
+		height: 600px;
+		margin-left:-150px;
+	}

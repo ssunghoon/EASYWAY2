@@ -19,4 +19,5 @@ public class VacationSignVO implements Serializable{
 	private long signId; // SIGN_ID
 	private String signTitle; // SIGN_TITLE
 	private String signContent; // SIGN_CONTENT
+	private String signVacationImportance; // SV_IMPORTANCE
 }
