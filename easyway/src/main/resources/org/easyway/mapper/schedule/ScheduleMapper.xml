@@ -31,13 +31,13 @@
 		) -->
 
 	 
-	<select id="read" parameterType="int" resultType = "schedule">
-		SELECT 
-			schedule_id AS scheduleId , employee_id AS employeeId, schedule_title AS scheduleTitle,
-			schedule_start AS scheduleStart, schedule_end AS scheduleEnd,
-			schedule_content AS scheduleContent, schedule_importance AS scheduleImportance, schedule_private AS schedulePrivate
-		FROM schedule WHERE schedule_seq = #{schedule_seq}
-	</select>
+<!-- 	<select id="read" parameterType="int" resultType = "schedule"> -->
+<!-- 		SELECT  -->
+<!-- 			schedule_id AS scheduleId , employee_id AS employeeId, schedule_title AS scheduleTitle, -->
+<!-- 			schedule_start AS scheduleStart, schedule_end AS scheduleEnd, -->
+<!-- 			schedule_content AS scheduleContent, schedule_importance AS scheduleImportance, schedule_private AS schedulePrivate -->
+<!-- 		FROM schedule WHERE schedule_seq = #{schedule_seq} -->
+<!-- 	</select> -->
 	<!--
 	<update id="updateBoard" parameterType="Board">
 		update board set title=#{title}, contents = #{contents}而щ읆紐?#{蹂?섎챸} 

@@ -356,68 +356,68 @@ p {
 		</div>
 	</div>
 
-<!--일정조회모달창-->
-	<div id="modalwrapper">
-		<!-- Button trigger modal -->
+<!-- <!--일정조회모달창--> -->
+<!-- 	<div id="modalwrapper"> -->
+<!-- 		<!-- Button trigger modal --> -->
 		
-	<!-- <input type="button"  onclick="button_click('')"  value="버튼1"/> -->
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-			data-bs-target="#exampleModal">일정조회</button>
-		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1"
-			aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">일정 조회</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal"
-							aria-label="Close"></button>
-					</div>
+<!-- 	<!-- <input type="button"  onclick="button_click('')"  value="버튼1"/> --> -->
+<!-- 		<button type="button" class="btn btn-primary" data-bs-toggle="modal" -->
+<!-- 			data-bs-target="#exampleModal">일정조회</button> -->
+<!-- 		<!-- Modal --> -->
+<!-- 		<div class="modal fade" id="exampleModal" tabindex="-1" -->
+<!-- 			aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
+<!-- 			<div class="modal-dialog"> -->
+<!-- 				<div class="modal-content"> -->
+<!-- 					<div class="modal-header"> -->
+<!-- 						<h5 class="modal-title" id="exampleModalLabel">일정 조회</h5> -->
+<!-- 						<button type="button" class="btn-close" data-bs-dismiss="modal" -->
+<!-- 							aria-label="Close"></button> -->
+<!-- 					</div> -->
 					
-					<div class="modal-body">
+<!-- 					<div class="modal-body"> -->
 
-						<!--<form action="scheduleInsertAction.do" method="post">  accept-charset="utf-8" -->
+<!-- 						<form action="scheduleInsertAction.do" method="post">  accept-charset="utf-8" -->
 						
-						<!--UI마스터-->
-						<form role=" " action="/schedule/schedulemodify" method="post" >
-                     <!--   accept-charset="utf-8"-->
-	                     <div class="mb-3">
-	                       <label>일정번호</label>
-	                            <input type="text" class="form-control" name="scheduleId" 
-	                            			value='<c:out value="${schedule.scheduleId}"/>' readonly="readonly">
-	                             <label>직원번호</label>
-	                            <input type="text" class="form-control" name="employeeId" 
-	                            			value='<c:out value="${schedule.employeeId}"/>' readonly="readonly">
-	                        <label>제목:</label>
-	                            <input type="text" class="form-control" name="scheduleTitle"
-	                            			value='<c:out value="${schedule.scheduleTitle}"/>' readonly="readonly">
-	                        <label>시작시간</label>
-	                            <input type="date" class="form-control" name="scheduleStart"
-	                           				 value='<c:out value="${schedule.scheduleStart}"/>' readonly="readonly">
-	                        <label>종료시간</label>
-	                            <input type="date" class="form-control" name="scheduleEnd"
-	                            value='<c:out value="${schedule.scheduleEnd}"/>' readonly="readonly">
-	                        <label>내용</label>
-	                            <input type="text" class="form-control" name="scheduleContent"
-	                            value='<c:out value="${schedule.scheduleContent}"/>' readonly="readonly">
-	                       <label>중요도 </label>
-	                            <input type="text"class="form-control"  name="scheduleImportance"  
-	                            value='<c:out value="${schedule.scheduleImportance}"/>'readonly="readonly">&nbsp;<label for="first">상</label>
-	                            <br>
-	                        <label>공사구분</label>
-	                            <input type="text" class="form-control" name="schedulePrivate"
-	                            value='<c:out value="${schedule.scheduleStart}"/>' readonly="readonly">
-	                     </div>
-	                     <div class="modal-footer">
-	                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-	                        <input type="submit" class="btn btn-primary" value="일정 생성">
-	                     </div>
-                 		 </form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<!-- 						UI마스터 -->
+<!-- 						<form role=" " action="/schedule/schedulemodify" method="post" > -->
+<!--                        accept-charset="utf-8" -->
+<!-- 	                     <div class="mb-3"> -->
+<!-- 	                       <label>일정번호</label> -->
+<!-- 	                            <input type="text" class="form-control" name="scheduleId"  -->
+<%-- 	                            			value='<c:out value="${schedule.scheduleId}"/>' readonly="readonly"> --%>
+<!-- 	                             <label>직원번호</label> -->
+<!-- 	                            <input type="text" class="form-control" name="employeeId"  -->
+<%-- 	                            			value='<c:out value="${schedule.employeeId}"/>' readonly="readonly"> --%>
+<!-- 	                        <label>제목:</label> -->
+<!-- 	                            <input type="text" class="form-control" name="scheduleTitle" -->
+<%-- 	                            			value='<c:out value="${schedule.scheduleTitle}"/>' readonly="readonly"> --%>
+<!-- 	                        <label>시작시간</label> -->
+<!-- 	                            <input type="date" class="form-control" name="scheduleStart" -->
+<%-- 	                           				 value='<c:out value="${schedule.scheduleStart}"/>' readonly="readonly"> --%>
+<!-- 	                        <label>종료시간</label> -->
+<!-- 	                            <input type="date" class="form-control" name="scheduleEnd" -->
+<%-- 	                            value='<c:out value="${schedule.scheduleEnd}"/>' readonly="readonly"> --%>
+<!-- 	                        <label>내용</label> -->
+<!-- 	                            <input type="text" class="form-control" name="scheduleContent" -->
+<%-- 	                            value='<c:out value="${schedule.scheduleContent}"/>' readonly="readonly"> --%>
+<!-- 	                       <label>중요도 </label> -->
+<!-- 	                            <input type="text"class="form-control"  name="scheduleImportance"   -->
+<%-- 	                            value='<c:out value="${schedule.scheduleImportance}"/>'readonly="readonly">&nbsp;<label for="first">상</label> --%>
+<!-- 	                            <br> -->
+<!-- 	                        <label>공사구분</label> -->
+<!-- 	                            <input type="text" class="form-control" name="schedulePrivate" -->
+<%-- 	                            value='<c:out value="${schedule.scheduleStart}"/>' readonly="readonly"> --%>
+<!-- 	                     </div> -->
+<!-- 	                     <div class="modal-footer"> -->
+<!-- 	                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button> -->
+<!-- 	                        <input type="submit" class="btn btn-primary" value="일정 생성"> -->
+<!-- 	                     </div> -->
+<!--                  		 </form> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 
 	<!-- <div id='wrap'> -->
 

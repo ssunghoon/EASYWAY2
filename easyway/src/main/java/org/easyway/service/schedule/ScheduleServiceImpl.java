@@ -29,18 +29,18 @@ public class ScheduleServiceImpl implements ScheduleService {
 		log.info("register........");
 		mapper.insert(schedule);
 	}
-	@Override
-	public void modify(Long scheduleId) {
-		log.info("modify........");
-		mapper.modify(scheduleId);
-	}
-
-	@Override
-	public void detail(Long scheduleId) {
-		log.info("detail");
-		mapper.read(scheduleId);
-		
-	}
+//	@Override
+//	public void modify(Long scheduleId) {
+//		log.info("modify........");
+//		mapper.modify(scheduleId);
+//	}
+//
+//	@Override
+//	public void detail(Long scheduleId) {
+//		log.info("detail");
+//		mapper.read(scheduleId);
+//		
+//	}
 	
 	
 }

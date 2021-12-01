@@ -10,7 +10,7 @@ public interface ScheduleMapper {
 		
 		public int insert(ScheduleVO schedule);//일정생성
 		
-		public int modify(Long scheduleId);
-		
-		public int read(Long scheduleId);
+//		public int modify(Long scheduleId);
+//		
+//		public int read(Long scheduleId);
 }

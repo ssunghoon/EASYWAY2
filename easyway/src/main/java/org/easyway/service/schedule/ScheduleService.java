@@ -11,9 +11,9 @@ public interface ScheduleService {
 		
 		public void register(ScheduleVO schedule);//일정등록성하기
 	
-		public void modify(Long scheduleId);//일정수정
-		
-		public void detail(Long scheduleId);//상세보기
+//		public void modify(Long scheduleId);//일정수정
+//		
+//		public void detail(Long scheduleId);//상세보기
 //	
 //	public void remove();//일정제거
 //

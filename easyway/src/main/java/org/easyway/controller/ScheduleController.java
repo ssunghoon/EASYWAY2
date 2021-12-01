@@ -33,17 +33,17 @@ public class ScheduleController {
 //		model.addAttribute("list", service.getListDo(scheduleId));
 //	}
 	//수정
-	@GetMapping("/schedulemodify")
-	public void modify(@RequestParam("scheduleId") Long scheduleId,Model model){
-		log.info("/modify");
-		model.addAttribute("schedule",service.getListDo());
-	}
+//	@GetMapping("/schedulemodify")
+//	public void modify(@RequestParam("scheduleId") Long scheduleId,Model model){
+//		log.info("/modify");
+//		model.addAttribute("schedule",service.getListDo());
+//	}
 	//조회
-	@GetMapping("/schedulegetlist")
-	public void getlist(@RequestParam("scheduleId") Long scheduleId,Model model){
-		log.info("/getlist");
-		model.addAttribute("schedule",service.getListDo());
-	}
+//	@GetMapping("/schedulegetlist")
+//	public void getlist(@RequestParam("scheduleId") Long scheduleId,Model model){
+//		log.info("/getlist");
+//		model.addAttribute("schedule",service.getListDo());
+//	}
 	//일정등록
 	@PostMapping("/scheduleregister")
 	public String register(ScheduleVO schedule, RedirectAttributes rttr){
@@ -61,15 +61,15 @@ public class ScheduleController {
 //		model.addAttribute();
 //	}
 	//일정수정
-	@PostMapping("/schedulemodify")
-	public void modify(ScheduleVO schedule, RedirectAttributes rttr){
-		log.info("modify.......");
-		
+//	@PostMapping("/schedulemodify")
+//	public void modify(ScheduleVO schedule, RedirectAttributes rttr){
+//		log.info("modify.......");
+//		
 //		if(service.modify(schedule)){
 //			rttr.addFlashAttribute("result", "success");
 //		}
 //		
-	}
+//	}
 	//일정삭제
 	
 	
