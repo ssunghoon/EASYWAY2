@@ -16,6 +16,8 @@
 
 	<security:http>
 
+		<security:intercept-url pattern="/*"
+			access="permitAll" />
 		<security:intercept-url pattern="/sample/all"
 			access="permitAll" />
 

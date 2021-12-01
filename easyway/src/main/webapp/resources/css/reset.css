@@ -1,9 +1,20 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR");
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 
 body {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Pretendard-Regular" !important;
+  margin: 0;
+  padding: 0;
 }
+
+
+/* 이하 리셋 태그 ------------------------------------------------------------------------ */
 
 html,
 div,
@@ -111,7 +122,7 @@ ul {
 
 a {
   color: #333;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 table {
