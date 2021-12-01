@@ -16,6 +16,7 @@ a:HOVER {
   color: white;
   width: 78px;
   height: 30px;
+  font-size: 14px;
 }
 
 /* 아래 클래스는 각 페이지의 첫 번째 레벨의 '제목'으로 사용할 수 있음 */
@@ -67,6 +68,6 @@ a:HOVER {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 30px 30px 30px 30px 30px 30px 30px auto 30px;
-/*   row-gap: 0px;
-  column-gap: 0px; */
+  row-gap: 30px;
+  column-gap: 10px;
 }

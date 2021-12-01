@@ -23,8 +23,10 @@ nav {
 
 .nav-bar {
     border-right: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
+}
+
+.nav-manager {
+	background: #eee;
 }
 
 .logo-a {
@@ -61,7 +63,8 @@ nav {
 }
 
 .nav {
-	padding: 10px 10px 0 10px;	
+	padding: 10px 10px 30px 10px;	
+	
 }
 
 .nav-link {
@@ -74,6 +77,11 @@ nav {
 
 .nav-link:hover {
 	background: #eee;
+}
+
+.nav-manager .nav-link:hover {
+	background: #fff;
+	color: #0397ed;
 }
 
 .nav-element:nth-child(1){

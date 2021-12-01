@@ -22,19 +22,15 @@
 		rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 		crossorigin="anonymous">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500&display=swap"
-		rel="stylesheet">
 	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
 	
-    <!-- EASYWAY 전용 공통부 CSS -->
+    <!-- EASYWAY CSS, JS -->
     <link href="/resources/css/reset.css" rel="stylesheet">
     <link href="/resources/css/sidebars.css" rel="stylesheet">
     <link href="/resources/css/common.css" rel="stylesheet">
     <link href="/resources/css/common_boardlist.css" rel="stylesheet">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
+    <script src="/resources/js/menu.js"></script>
 
 </head>
 
@@ -231,11 +227,5 @@
     </div>
 
 </body>
-
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-	crossorigin="anonymous"></script>
-<script src="/resources/js/menu.js"></script>
 
 </html>

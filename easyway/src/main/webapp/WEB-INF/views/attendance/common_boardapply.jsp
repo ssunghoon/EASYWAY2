@@ -26,14 +26,21 @@
 		href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500&display=swap"
 		rel="stylesheet">
 	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	 
+	<!-- summernote -->
+	<script src="/resources/js/summernote.js"></script>
+	<script src="/resources/summernote/summernote-lite.js"></script>
+	<script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
+	<link rel="stylesheet" href="/resources/summernote/summernote-lite.css">
 	
-    <!-- EASYWAY 전용 공통부 CSS -->
+    <!-- EASYWAY CSS, JS -->
     <link href="/resources/css/reset.css" rel="stylesheet">
     <link href="/resources/css/sidebars.css" rel="stylesheet">
     <link href="/resources/css/common.css" rel="stylesheet">
     <link href="/resources/css/common_boardapply.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-
+    <script src="/resources/js/menu.js"></script>
+    
 </head>
 
 <body>
@@ -70,7 +77,7 @@
 		            
 			        	<div class="form-title">
 			                <!-- 제목 -->
-			                제목
+			                	<div class="option-name">제목</div>
 			            </div>
 			            <div class="form-title-input">
 			                <!-- 제목 : 작성칸 -->
@@ -78,52 +85,71 @@
 			            </div>
 			            <div class="form-writer">
 			                <!-- 작성자 -->
-			                작성자
+			                <div class="option-name">작성자</div>
 			            </div>
 			            <div class="form-writer-input">
 			                <!-- 작성자 : 작성칸 -->
 			                <!-- class는 input이라고 이름붙였지만, read-only로 해주세요 -->
+			                <div class="form-writer-name">전나은</div>
 			            </div>
 			            
+			            <!-- 이하 옵션 필요한만큼 가져다 쓰고 안 쓰면 지우세요 ----------------------------------->
 			            <div class="form-option1">
 			                <!-- 입력1 -->
-			                입력 옵션 1
+			                <div class="option-name">입력 옵션 1</div>
 			            </div>
 			            <div class="form-option1-input">
 							<!-- 입력1 : 작성칸 -->
+							<select class="form-select" name="">
+			                   <option value="1">1번 입니다</option>
+			                   <option value="2">2번 입니다</option>
+			                   <option value="3">3번 입니다</option>
+			                </select>
+							
 			            </div>
 			            <div class="form-option2">
 			                <!-- 입력2 -->
-			                입력 옵션 2
+			                <div class="option-name">입력 옵션 2</div>
 			            </div>
 			            <div class="form-option2-input">
 							<!-- 입력2 : 작성칸 -->
+							<div class="radio-wrapper">
+								<input type="radio" name="name-here" id="first" value="상">&nbsp;<label for="first">상</label>
+				            </div>
+							<div class="radio-wrapper">
+					            <input type="radio" name="name-here" id="second" value="중">&nbsp;<label for="second">중</label>
+				            </div>
+							<div class="radio-wrapper">
+					            <input type="radio" name="name-here" id="third" value="하">&nbsp;<label for="third">하</label>
+				            </div>
 			            </div>
 			            <div class="form-option3">
 			            	<!-- 입력3 -->
-			            	입력 옵션 3
+			            	<div class="option-name">입력 옵션 3</div>
 			            </div>
 			            <div class="form-option3-input">
 			            	<!-- 입력3 : 작성칸 -->
 			            </div>
 			            <div class="form-option4">
 			            	<!-- 입력4 -->
-			            	입력 옵션 4
+			            	<div class="option-name">입력 옵션 4</div>
 			            </div>
 			            <div class="form-option4-input">
 			            	<!-- 입력4 : 작성칸 -->
+			            	<input type="text" name="">
 			            </div>
 			            <div class="form-option5">
 			            	<!-- 입력5 -->
-			            	입력 옵션 5
+			            	<div class="option-name">입력 옵션 5</div>
 			            </div>
 			            <div class="form-option5-input">
 			            	<!-- 입력5 : 작성칸 -->
 			            </div>
+			            <!-- 여기까지 추가 옵션이었습니다. 감사합니다. --------------------------------------------->
 			            
 			            <div class="form-file">
 			            	<!-- 첨부 파일 -->
-			            	첨부 파일
+			            	<div class="option-name">첨부 파일</div>
 			            </div>
 			            <div class="form-file-input">
 			            	<!-- 첨부 파일 -->
@@ -131,7 +157,7 @@
 			            
 			            <div class="form-content">
 			            	<!-- 내용 -->
-			            	내용
+			            	<div class="option-name">내용</div>
 			            </div>
 			            <div class="form-content-input">
 			            	<!-- 내용 작성칸 -->
@@ -155,14 +181,5 @@
     </div> <!-- end page-divider -->
 
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="/resources/js/menu.js"></script>
-
-<!-- summernote -->
-<script src="/resources/js/summernote.js"></script>
-<script src="/resources/summernote/summernote-lite.js"></script>
-<script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
-<link rel="stylesheet" href="/resources/summernote/summernote-lite.css">
 
 </html>
