@@ -1,6 +1,6 @@
 /*실시간 시계*/
 
-const clock = document.querySelector('#clock');
+const clock = document.querySelector('.work-check-clock');
 
 function getTime(){
     const time = new Date();
