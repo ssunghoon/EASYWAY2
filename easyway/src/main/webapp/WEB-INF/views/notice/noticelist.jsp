@@ -41,6 +41,11 @@
 		font-size: 3.5rem;
 	}
 }
+
+/* th, td { */
+/* color : yellow; */
+/* font-weight: bold; */
+/* } */
 </style>
 
 
@@ -62,48 +67,65 @@
 
 			<table class="table_table-striped"
 				style="text-align: center; border: 1px solid #dddddd; margin-left: 150px; margin-top: 170px; width: 60%; position: absolute;">
-			<div class="fixed">
-				<a href="/notice/noticelist"> 
-				<input type="button" class="btn btn-primary pull-right"
-					style="margin-left: 145px; margin-top: 30px; width: 30%; position: absolute; height: 45px; font-size: 150%;"
-					value="전체 공지사항"></a>
-				<a href="*"> 
-				<input type="button" class="btn btn-primary pull-right"
-					style="margin-left: 650px; margin-top: 30px; width: 40%; height: 45px; font-size: 150%;"
-					value="부서 공지사항"></a>
-			</div>
+
+				<div class="menu">
+					<a href="/notice/noticelist"> <input type="button"
+						class="btn btn-primary pull-right"
+						style="margin-left: 145px; margin-top: 30px; width: 30%; position: absolute; height: 45px; font-size: 150%;"
+						value="전체 공지사항"></a> <a href="*"> <input type="button"
+						class="btn btn-primary pull-right"
+						style="margin-left: 650px; margin-top: 30px; width: 40%; height: 45px; font-size: 150%;"
+						value="부서 공지사항"></a>
+				</div>
 
 				<a href="/notice/noticeregister" class="btn btn-primary pull-right"
 					style="margin-left: 1035px; margin-top: 50px; width: 8%;"
 					value="글쓰기">글쓰기</a>
 				<tr>
+
+					<th style="background-color: #eeeeee; text-align: center;"></th>
 					<th style="background-color: #eeeeee; text-align: center;">글번호</th>
-					<th style="background-color: #eeeeee; text-align: center;">사원번호</th>
-					<th style="background-color: #eeeeee; text-align: center;">부서번호</th>
+<!-- 					<th style="background-color: #eeeeee; text-align: center;">사원번호</th> -->
+<!-- 					<th style="background-color: #eeeeee; text-align: center;">부서번호</th> -->
 					<th style="background-color: #eeeeee; text-align: center;">글제목</th>
-<!-- 					<th style="background-color: #eeeeee; text-align: center;">글내용</th> -->
+					<!-- 					<th style="background-color: #eeeeee; text-align: center;">글내용</th> -->
 					<th style="background-color: #eeeeee; text-align: center;">파일첨부</th>
 					<th style="background-color: #eeeeee; text-align: center;">날짜</th>
 					<th style="background-color: #eeeeee; text-align: center;">조회수</th>
-
-
 				</tr>
 
 
 				<c:forEach var="of_board" items="${noticelist }">
 					<tr
 						style="background-color: #11111; text-align: center; border: 1px;">
+						<td><input type="hidden">
+						<c:if test="${of_board.obFixedCheck == 'Y' }">
+ 								<span>
+<!--  								<span class="label" style="color: white; font-weight: inherit; background-color: #6E6E6E; font-size: 100%;"> -->
+ 								</span>
+<!-- <img src="//t1.daumcdn.net/editor/deco/contents/emoticon/things_14.gif?v=2" border="0" class="txc-emo"> -->
+							</c:if>
 						<td><c:out value="${of_board.obId }" /></td>
-						<td><c:out value="${of_board.employeeId }" /></td>
-						<td><c:out value="${of_board.departmentId }" /></td>
-						<td><a href="/notice/noticedetail?obId=${of_board.obId}">
-						<c:out value="${of_board.obTitle}" /></a></td>
-<%-- 						<td><c:out value="${of_board.obContent }" /></td> --%>
+<%-- 						<td><c:out value="${of_board.employeeId }" /></td> --%>
+<%-- 						<td><c:out value="${of_board.departmentId }" /></td> --%>
+						<td style="text-align: left;"><a href="/notice/noticedetail?obId=${of_board.obId}">
+								<c:out value="${of_board.obTitle}" />
+								<c:if test="${of_board.obFixedCheck == 'Y' }">
+<!-- 								<span class="label" style="color: white; font-weight: inherit; background-color: #6E6E6E; font-size: 100%;">공지</span> -->
+							<img src="//t1.daumcdn.net/editor/deco/contents/emoticon/things_14.gif?v=2" border="0" class="txc-emo">
+							</c:if>
+<%-- 								<c:if test="${of_board.obFixedCheck == 'Y' }"> --%>
+<!-- 								<span class="label" style="font-family: serif; color: blue; font-weight: bold;">강조</span> -->
+<%-- 							</c:if> --%>
+						</a></td>
+						<%-- 						<td><c:out value="${of_board.obContent }" /></td> --%>
 						<td><c:out value="${of_board.obFilePath }" /></td>
 						<td>
-<%-- 						<c:out value="${of_board.obDate }" /> --%>
-									<fmt:formatDate var="setObDate" value="${of_board.obDate }" pattern="yyyy-MM-dd"/>${setObDate }<p></td>
+							<%-- 						<c:out value="${of_board.obDate }" /> --%> <fmt:formatDate
+								var="setObDate" value="${of_board.obDate }" pattern="yyyy-MM-dd" />${setObDate }<p>
+						</td>
 						<td><c:out value="${of_board.obView }" /></td>
+
 					</tr>
 				</c:forEach>
 			</table>
