@@ -31,6 +31,7 @@ public class SignController {
 	@GetMapping("/signmain")
 	public void main() {
 		log.info("signMain...................");
+		System.out.println("안녕하세여");
 	}
 	
 	@GetMapping("/apply")

@@ -6,6 +6,7 @@
 
 
 <mapper namespace="org.easyway.mapper.sign.SignMapper">
+	
 	<!-- 검색 (기안종류) -->
 	<sql id="search1">
 		<choose>
@@ -23,6 +24,7 @@
 				</when>
 			</choose> 
 	</sql>
+	
 	<!-- 검색 (제목) -->
 	<sql id="search2">
 		<if test="keyword2 != null">
@@ -54,7 +56,6 @@
 			)
 	</insert>
 	
-	
 	<!-- 휴가신청서 작성 -->
 	<insert id="insertVacation">
 		insert into si_vacation(
@@ -64,9 +65,8 @@
 				sv_seq.nextval,#{signFormId},#{signVacationType},#{signVacationImportance},TO_DATE(#{signVacationStart},'yyyy/mm/dd')
 				,TO_DATE(#{signVacationEnd},'yyyy/mm/dd'), #{signId}
 			)
-		
 	</insert>
-	
+
 	<!-- 기본기안서 작성 -->
 	<insert id="insertBasic" >
 		insert into si_basic(
@@ -76,10 +76,7 @@
 			si_basic_seq.nextval,#{signFormId},#{signBasicRange},TO_DATE(#{signBasicStart},'yyyy/mm/dd')
 			,TO_DATE(#{signBasicEnd},'yyyy/mm/dd'),#{signBasicImportance}, #{signId}
 		)
-		
 	</insert>
-	
-
 	
 	<!-- 기안함 목록 -->
 	<select id="getListDraft" resultType="org.easyway.domain.sign.SignVO">
@@ -95,6 +92,7 @@
 		where sign_id > 0
 		]]>
 	</select> 
+	
 	<!-- 페이징  -->
 	<select id="getListWithPaging" resultType="org.easyway.domain.sign.SignVO">
 		<![CDATA[
@@ -120,7 +118,7 @@
 	    	where rn > (#{pageNum} -1) * #{amount}
 	    	]]>
 	</select>
-	
+		
 	<!-- 기안함 상세 (기본기안서) -->
 	<select id="getDraftBasic" resultType="org.easyway.domain.sign.BasicSignVO">
 		SELECT
