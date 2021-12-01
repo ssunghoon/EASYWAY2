@@ -19,17 +19,28 @@ public class ScheduleServiceImpl implements ScheduleService {
 	private ScheduleMapper mapper;
 
 	@Override
-	public List<ScheduleVO> scheduleList() {
+	public List<ScheduleVO> getListDo() {
 		log.info("list......");
-		return mapper.scheduleList();
+		return mapper.getList();
 	}
 
 	@Override
 	public void register(ScheduleVO schedule) {
 		log.info("register........");
-		mapper.register(schedule);
+		mapper.insert(schedule);
 	}
-	
+	@Override
+	public void modify(Long scheduleId) {
+		log.info("modify........");
+		mapper.modify(scheduleId);
+	}
+
+	@Override
+	public void detail(Long scheduleId) {
+		log.info("detail");
+		mapper.read(scheduleId);
+		
+	}
 	
 	
 }

@@ -27,11 +27,11 @@ public class ScheduleMapperTests {
 		
 		ScheduleVO vo = new ScheduleVO();
 		
-		vo.setSchedule_title("testtitle");
+//		vo.setSchedule_title("testtitle");
 //		vo.setSchedule_
 		
 		log.info(mapper);
-		mapper.register(schedule);
+		mapper.insert(schedule);
 	}
 	
 	
