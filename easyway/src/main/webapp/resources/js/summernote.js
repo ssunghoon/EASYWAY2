@@ -1,5 +1,5 @@
 $(document).ready(function() {
-		$('#summernote').summernote({
+		$('.summernote').summernote({
 			  // 에디터 높이
 			  height: 300,
 			  // 에디터 한글 설정
