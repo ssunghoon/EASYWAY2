@@ -2,6 +2,7 @@ package org.easyway.controller;
 
 import org.easyway.domain.sign.BasicSignVO;
 import org.easyway.domain.sign.Criteria;
+import org.easyway.domain.sign.EmployeeVO;
 import org.easyway.domain.sign.PageVO;
 import org.easyway.domain.sign.SignVO;
 import org.easyway.domain.sign.SpendSignVO;
@@ -39,11 +40,14 @@ public class SignController {
 	
 	@GetMapping("/applyspend")
 	public void applySpend() {
+		
 		log.info("applySpend......................");
 	}
 	
 	@GetMapping("/applybasic")
-	public void applyBasic() {
+	public void applyBasic(EmployeeVO employee, Model model) {
+		log.info("회원 목록 : "+service.getListEmployee());
+		model.addAttribute("employeeList", service.getListEmployee());
 		log.info("applyBasic......................");
 	}
 	
@@ -66,13 +70,13 @@ public class SignController {
 	}
 	// 기본 기안서
 	@PostMapping("/applybasic")
-	public String applyBasic(BasicSignVO basic, SignVO sign, RedirectAttributes rttr, Model model) {
+	public String applyBasic(BasicSignVO basic, SignVO sign, EmployeeVO employee, RedirectAttributes rttr, Model model) {
 		log.info(basic);
+		log.info("employee : " +employee);
 		service.applyBasic(basic, sign);
 		
 		rttr.addFlashAttribute("basicSign", basic);
 		rttr.addFlashAttribute("sign", sign);
-		
 		//model.addAttribute("signId", sign.getSignId());
 		
 		/*// 파일처리 begin
@@ -117,21 +121,27 @@ public class SignController {
 		
 	}*/
 	
-
-	
-	
+	// 기안함 목록 + 페이징
 	@GetMapping("/draftlist")
 	public void draftList(Criteria cri, Model model){
-		log.info("listDraft : " + cri);
-		model.addAttribute("draftList", service.getList(cri));
-		model.addAttribute("pageMaker", new PageVO(cri, 123));
+		log.info("draftList : " + cri);
+		log.info("arrList : " + cri.getArrList());
+		model.addAttribute("draftList", service.getListDraft(cri));
+		
+		int total = service.getTotal(cri);
+		
+		log.info("total : " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(cri, total));
+		
 	}
+		
 	
 	// 기안함상세
 	@GetMapping("/getdraft")
 	public void getDraft(@RequestParam("signId") Long signId, @RequestParam(value="signFormId", required=false) Long signFormId,@ModelAttribute("cri") Criteria cri, Model model){
 		
-		log.info("/getDraft");
+		log.info("getDraft");
 		log.info("signFormId = " + signFormId);
 		if(signFormId == 1){
 			model.addAttribute("basicSign", service.getDraftBasic(signId, signFormId));
@@ -141,6 +151,13 @@ public class SignController {
 			model.addAttribute("vacationSign", service.getDraftVacation(signId, signFormId));
 		}
 	}
+	
+	// 결재선 목록
+		@GetMapping("/employeelist")
+		public void employeeList(Model model){
+			
+			log.info("employeeList");		
+		}
 	
 	
 }

@@ -21,29 +21,16 @@
 <!-- Bootstrap core CSS -->
 <link href="/resources/css/reset.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- fontawsome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <!-- css -->
 <link href="/resources/css/sign.css" rel="stylesheet">
-<style>
-.bd-placeholder-img {
-	font-size: 1.125rem;
-	text-anchor: middle;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-}
-
-@media ( min-width : 768px) {
-	.bd-placeholder-img-lg {
-		font-size: 3.5rem;
-	}
-}
-
-</style>
- 
-
-
 <!-- Custom styles for this template -->
 <link href="/resources/css/sidebars.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/resources/js/menu.js"></script>
+
 </head>
 <body>
 <jsp:include page="../public/sidebar.jsp" />
@@ -51,6 +38,7 @@
 	<div id="wrap">
 		<div class="sign">
 			<h4>기본 기안서</h4>
+			 <a id="signLine" class="btn btn-primary ls-modal" data-toggle="modal" data-target="#modal">결재선</a>
 			<form action="/sign/applybasic" action="/sign/signFilePath" method="post">
 				제목 : <input type="text" name="signTitle"><br>
 				공개 범위 : <select name="signBasicRange">
@@ -65,67 +53,81 @@
 				 <input type="radio" name="signBasicImportance" id="second" value="중">&nbsp;<label for="second">중</label>
 				 <input type="radio" name="signBasicImportance" id="third" value="하">&nbsp;<label for="third">하</label><br>
  				 <br>
+ 				
 				<textarea id="summernote" name="signContent"></textarea>
 				<br>
 				<!--  기안 양식번호 --><input type="hidden" name="signFormId" value="1">
 				<input type="submit" value="등록">
 			</form>
+			<!-- 결재선 모달 -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							<h4 class="modal-title" id="myModalLabel">결재선</h4>
+						</div>
+						<div class="modal-body">
+							<div class="col-lg-6 sign-list-box">
+								<h5>결재선 설정</h5>
+								<c:forEach var="employee" items="${employeeList }">
+									<input type="radio" value="${employee.employeeId }" name="sign" id="emp${employee.employeeId }">
+									<label for="emp${employee.employeeId }">
+										<c:out value="${employee.employeeName}" />
+									</label><br>
+								</c:forEach>
+							</div>
+							<div class="col-lg-1">
+								<div class="in-out-box">
+									<a><i class="fas fa-caret-square-right fa-2x"></i></a>
+									<a><i class="fas fa-caret-square-left fa-2x"></i></a>
+								</div>
+								<div class="in-out-box">
+									<a><i class="fas fa-caret-square-right fa-2x"></i></a>
+									<a><i class="fas fa-caret-square-left fa-2x"></i></a>
+								</div>
+								<div class="in-out-box">
+									<a><i class="fas fa-caret-square-right fa-2x"></i></a>
+									<a><i class="fas fa-caret-square-left fa-2x"></i></a>
+								</div>
+								<div class="in-out-box">
+									<a><i class="fas fa-caret-square-right fa-2x"></i></a>
+									<a><i class="fas fa-caret-square-left fa-2x"></i></a>
+								</div>
+							</div>
+							<div class="col-lg-5">
+								<div class="sign-box">
+								</div>
+								<div class="sign-box">
+								</div>
+								<div class="sign-box">
+								</div>
+								<div class="sign-box">
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-gray"
+								data-dismiss="modal">닫기</button>
+							<button type="button" class="btn btn-primary">저장</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
 		</div>
 	</div>
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="/resources/js/menu.js"></script>
-<script src="./js/sidebars.js"></script>
-<!-- summernote -->
 <script type="text/javascript">
-/* $(document).ready(function() {
-	  $('#summernote').summernote({
-	    	placeholder: 'content',
-	        minHeight: 370,
-	        maxHeight: null,
-	        focus: true, 
-	        lang : 'ko-KR'
-	  });
-	});  */
-	
-	$(document).ready(function() {
-		$('#summernote').summernote({
-			  // 에디터 높이
-			  height: 300,
-			  // 에디터 한글 설정
-			  lang: "ko-KR",
-			  // 에디터에 커서 이동 (input창의 autofocus라고 생각하시면 됩니다.)
-			  focus : true,
-			  toolbar: [
-				    // 글꼴 설정
-				    ['fontname', ['fontname']],
-				    // 글자 크기 설정
-				    ['fontsize', ['fontsize']],
-				    // 굵기, 기울임꼴, 밑줄,취소 선, 서식지우기
-				    ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
-				    // 글자색
-				    ['color', ['forecolor','color']],
-				    // 표만들기
-				    ['table', ['table']],
-				    // 글머리 기호, 번호매기기, 문단정렬
-				    ['para', ['ul', 'ol', 'paragraph']],
-				    // 줄간격
-				    ['height', ['height']],
-				    // 그림첨부, 링크만들기, 동영상첨부
-				    ['insert',['picture','link','video']],
-				    // 코드보기, 확대해서보기, 도움말
-				    ['view', ['codeview','fullscreen', 'help']]
-				  ],
-				  // 추가한 글꼴
-				fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋음체','바탕체'],
-				 // 추가한 폰트사이즈
-				fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
-				 
-			});
-		});
+	$("#signLine").on("click", function() {
+		$("#myModal").modal("show");
+	});
 </script>
+<!-- summernote -->
+<script src="/resources/js/summernote.js"></script>
 <script src="/resources/summernote/summernote-lite.js"></script>
 <script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
 <link rel="stylesheet" href="/resources/summernote/summernote-lite.css">  

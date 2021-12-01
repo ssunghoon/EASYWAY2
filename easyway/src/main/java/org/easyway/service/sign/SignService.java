@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.easyway.domain.sign.BasicSignVO;
 import org.easyway.domain.sign.Criteria;
+import org.easyway.domain.sign.EmployeeVO;
 import org.easyway.domain.sign.SignVO;
 import org.easyway.domain.sign.SpendSignVO;
 import org.easyway.domain.sign.VacationSignVO;
@@ -24,10 +25,16 @@ public interface SignService {
 //	public List<SignVO> getListDraft();
 	
 	// 기안함 목록
-	public List<SignVO> getList(Criteria cri);
+	public List<SignVO> getListDraft(Criteria cri);
 	
 	// 기안함 상세
 	public BasicSignVO getDraftBasic(Long signId,Long signFormId);
 	public SpendSignVO getDraftSpend(Long signId,Long signFormId);
 	public VacationSignVO getDraftVacation(Long signId,Long signFormId);
+	
+	// 기안 갯수
+	public int getTotal(Criteria cri);
+	
+	// 직원 목록
+	public List<EmployeeVO> getListEmployee();
 }

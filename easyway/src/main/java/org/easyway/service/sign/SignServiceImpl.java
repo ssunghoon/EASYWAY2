@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.easyway.domain.sign.BasicSignVO;
 import org.easyway.domain.sign.Criteria;
+import org.easyway.domain.sign.EmployeeVO;
 import org.easyway.domain.sign.SignVO;
 import org.easyway.domain.sign.SpendSignVO;
 import org.easyway.domain.sign.VacationSignVO;
@@ -67,7 +68,7 @@ public class SignServiceImpl implements SignService {
 	}*/
 	
 	@Override
-	public List<SignVO> getList(Criteria cri){
+	public List<SignVO> getListDraft(Criteria cri){
 		log.info("getList with Criteria" + cri);
 		return mapper.getListWithPaging(cri);
 	}
@@ -97,4 +98,16 @@ public class SignServiceImpl implements SignService {
 
 	}
 	
+	// 기안 갯수
+	public int getTotal(Criteria cri) {
+		log.info("get total count");
+		return mapper.getTotalCount(cri);
+	}
+	
+	// 직원 목록
+	public List<EmployeeVO> getListEmployee() {
+		log.info("getListEmployee..............");
+		
+		return mapper.getListEmployee();
+	}
 }

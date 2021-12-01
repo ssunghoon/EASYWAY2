@@ -1,5 +1,7 @@
 package org.easyway.domain.sign;
 
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.queryParam;
+
 import org.springframework.web.util.UriComponentsBuilder;
 
 import lombok.Getter;
@@ -15,8 +17,11 @@ public class Criteria {
 	private int amount;
 
 	private String type;
-	private String keyword;
+	private String keyword1;
+	private String keyword2;
 
+	private String[] arrList; // keyword1목록 담는 곳
+	
 	public Criteria() {
 		this(1, 10);
 	}
@@ -37,7 +42,8 @@ public class Criteria {
 				.queryParam("pageNum", this.pageNum)
 				.queryParam("amount", this.getAmount())
 				.queryParam("type", this.getType())
-				.queryParam("keyword", this.getKeyword());
+				.queryParam("keyword1", this.getKeyword1())
+				.queryParam("keyword2", this.getKeyword2());
 
 		return builder.toUriString();
 
