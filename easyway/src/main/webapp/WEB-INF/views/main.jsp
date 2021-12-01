@@ -56,34 +56,35 @@
 			<!-- 위젯 감싸는 태그 -->
 			<div class="widget-container">
 				<!-- 썸네일 컨테이너 (draggable) -->
-				<ul id="widget-thumb-container" class="widget-thumb-container">
+				<ul class="widget-thumb-container" onclick="selectAlert(event)">
 				
 					<!-- 위젯 썸네일들 -->
-					<li class="widget-thumb shadow unselected widget-clock">
-						<div class="widget-thumb-label">시계</div>
+					<li class="widget-thumb shadow unselected">
+						<div class="widget-thumb-label">실시간 시계</div>
 					</li>
-					<li class="widget-thumb shadow unselected widget-notice">
-						<div class="widget-thumb-label">공지사항 <br> 목록</div>
+					<li class="widget-thumb shadow unselected">
+						<div class="widget-thumb-label">공지사항 목록</div>
 					</li>
-					<li class="widget-thumb shadow unselected widget-attendance">
-						<div class="widget-thumb-label">출퇴근 <br> 체크</div>
+					<li class="widget-thumb shadow unselected">
+						<div class="widget-thumb-label">출퇴근 체크</div>
 					</li>
-					<li class="widget-thumb shadow selected widget-sign">
-						<div class="widget-thumb-label">결재함 <br> 목록</div>
+					<li class="widget-thumb shadow selected">
+						<div class="widget-thumb-label">결재함 목록</div>
 					</li>
-					<li class="widget-thumb shadow unselected widget-project">
-						<div class="widget-thumb-label">프로젝트 <br> 리스트</div>
+					<li class="widget-thumb shadow unselected">
+						<div class="widget-thumb-label">프로젝트 리스트</div>
 					</li>
-					<li class="widget-thumb shadow unselected widget-schedule">
-						<div class="widget-thumb-label">캘린더</div>
+					<li class="widget-thumb shadow unselected">
+						<div class="widget-thumb-label">캘린더 일정</div>
 					</li><!-- end 위젯 썸네일들 -->
 					
 				</ul> <!-- end widget-thumb-container -->
 				
 				<!-- 선택된 위젯들 -->
-				<div class="widget-selected-container">
+				<div id="widget-selected-container">
 					
-					<!-- js로 위젯 생성할 자리 -->
+					<!-- 클릭한 위젯이 생성될 자리 -->
+					
 					
 				</div>
 				

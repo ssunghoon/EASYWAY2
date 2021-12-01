@@ -29,7 +29,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="/easyway/sign/insertSignForm.do" class="nav-link link-dark">
+				<a href="/sign/signmain" class="nav-link link-dark">
 					<i class="nav-element fas fa-file-signature"></i>
 					<span class="nav-element">전자결재</span>
 				</a>
