@@ -3,7 +3,7 @@ $(function () {
     
 	// 위젯 썸네일(widget-thumb unselected)을 클릭하면
 	// 위젯 영역(widget-area)에  위젯(widget-selected)이 생성
-	$('.unselected')d.on({
+	$('.unselected').on({
 		
 		// 위젯 썸네일(widget-thumb unselected) 클릭 이벤트
 		click:function(){
@@ -32,11 +32,14 @@ $(function () {
 */
 
 
-const thumbContainer = document.querySelector('.widget-thumb-container');
+console.log("아좀제발좀");
+		
+
+const thumbContainer = document.querySelector('#widget-thumb-container');
 
 function selectAlert(e) {
-    const selected = e.target.value;
+    const selected = e.target.html();
     alert(selected);
 }
 
-thumbContainer.addEventListener('onclick', selectAlert);
+thumbContainer.addEventListener('click', selectAlert);

@@ -35,8 +35,7 @@
     <link href="./resources/css/common.css" rel="stylesheet">
 	<link href="./resources/css/widget.css" rel="stylesheet"/>
     <script src="./resources/js/menu.js"></script>
-    <script src="./resources/js/widget.js"></script>
-
+    
 </head>
 
 <body>
@@ -57,7 +56,7 @@
 			<!-- 위젯 감싸는 태그 -->
 			<div class="widget-container">
 				<!-- 썸네일 컨테이너 (draggable) -->
-				<ul class="widget-thumb-container">
+				<ul id="widget-thumb-container" class="widget-thumb-container">
 				
 					<!-- 위젯 썸네일들 -->
 					<li class="widget-thumb shadow unselected widget-clock">
@@ -86,15 +85,14 @@
 					
 					<!-- js로 위젯 생성할 자리 -->
 					
-					
 				</div>
-				
-				
 				
 			</div>
 			
 		</div>
 	</div>
 </body>
+
+<script src="./resources/js/widget.js"></script>
 
 </html>
