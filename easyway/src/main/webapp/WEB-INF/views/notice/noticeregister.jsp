@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="path" value="${pageContext.request.contextPath}" />
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,7 +17,7 @@
 
 
 <!-- Bootstrap core CSS -->
-<link href="./css/reset.css" rel="stylesheet">
+<link href="/resources/css/reset.css" rel="stylesheet">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -43,20 +42,17 @@
 
 
 <!-- Custom styles for this template -->
-<link href="${path }/css/reset.css" rel="stylesheet">
-<link href="${path }/css/sidebars.css" rel="stylesheet">
+<link href="/resources/css/sidebars.css" rel="stylesheet">
 </head>
 <body>
-	<div class="container">
-
-	</div>
+	<div class="container"></div>
 	<jsp:include page="../public/sidebar.jsp" />
 
 	<div class="container">
 		<div class="row">
-			<form method="post" action="noticeInsertAction.do">
+			<form action="/notice/noticeregister" method="post">
 				<table class="table_table-striped"
-					style="text-align: center; border: 1px solid #dddddd">
+					style="text-align: center; border: 1px solid #dddddd; margin-left: 300px; margin-top: 100px; width: 80%;">
 					<thead>
 						<tr>
 							<th
@@ -65,47 +61,68 @@
 						</tr>
 					</thead>
 					<tbody>
-					
+
 						<tr>
-							<td><input type="text" class="form-control"
-								placeholder="사원번호" name="employee_id"></td>
+							<td>공지글<input type="checkbox" placeholder="상단고정여부1" id="ch1" name="obFixedCheck" value="Y" onclick="checkOnlyOne(this)">
+									일반글<input type="checkbox" placeholder="상단고정여부2" id="ch2" name="obFixedCheck" value="N" onclick="checkOnlyOne(this)">
+							</td>
 						</tr>
 						<tr>
 							<td><input type="text" class="form-control"
-								placeholder="글제목" name="ob_title"></td>
+								placeholder="사원번호" name="employeeId"></td>
 						</tr>
+						<tr>
+							<td><input type="text" class="form-control"
+								placeholder="글제목" name="obTitle"></td>
+						</tr>
+
 						<tr>
 							<td><textarea class="form-control" placeholder="글내용"
-									name="ob_content"></textarea></td>
+									name="obContent" style="height: 400px;">
+									</textarea></td>
 						</tr>
 						<tr>
 							<td><input type="text" class="form-control"
-								placeholder="파일첨부" name="ob_file_path"></td>
+								placeholder="파일첨부" name="obFilePath"></td>
 						</tr>
+<!-- 						<tr> -->
+<!-- 							<td><input type="text" class="form-control" placeholder="날짜" -->
+<!-- 								name="ob_date"></td> -->
+<!-- 						</tr> -->
 						<tr>
 							<td><input type="text" class="form-control"
-								placeholder="날짜" name="ob_date"></td>
+								placeholder="부서번호" name="departmentId"></td>
 						</tr>
-							<tr>
-							<td><input type="text" class="form-control"
-								placeholder="부서번호" name="department_id"></td>
-						</tr>
-
-
+						<tr>
+							<td><input type="submit" class="btn btn-primary pull-right"
+								value="글쓰기버튼"></td>
 					</tbody>
 				</table>
-				<input type="submit" class="btn btn-primary pull-right"
-					value="글쓰기버튼"></a>
+
 			</form>
 		</div>
 	</div>
 </body>
 
+<script type="text/javascript">
+function checkOnlyOne(element) {
+	  
+	  const checkboxes 
+	      = document.getElementsByName("obFixedCheck");
+	  
+	  checkboxes.forEach((cb) => {
+	    cb.checked = false;
+	  })
+	  
+	  element.checked = true;
+	}
+</script>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="${path}/js/menu.js"></script>
-<script src="./js/sidebars.js"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/resources/js/menu.js"></script>
+<script src="/resources/js/sidebars.js"></script>
 </html>

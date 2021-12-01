@@ -8,7 +8,7 @@
 		style="width: 280px;">
 		<a href="/easyway/main/mainAction.do"
 			class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-			<!-- 이미지자리 --> <span class="fs-4"><img src="../image/EASYWAY_LOGO.png"></span>
+			<!-- 이미지자리 --> <span class="fs-4"><img src="/resources/image/EASYWAY_LOGO.png"></span>
 		</a>
 		<hr>
 		<ul class="nav nav-pills flex-column mb-auto">
