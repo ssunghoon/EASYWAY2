@@ -1,5 +1,7 @@
 package org.easyway.domain.member;
 
+import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
